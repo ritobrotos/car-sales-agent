@@ -18,16 +18,15 @@ def execute_query(cursor: DictCursor, query: str):
     return cursor.fetchall()
 
 
-DB_NAME = "food_db"
-DB_USER = "postgres"
-DB_PASSWORD = "rito123"
-DB_HOST = "localhost"
-DB_PORT = "5432"
-
-
 def test_execute_query():
-    connection = create_postgres_connection(DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT)
-    select_query = "SELECT * FROM indian_food"
+    db_name = "car_db"
+    db_user = "postgres"
+    db_password = "rito123"
+    db_host = "localhost"
+    db_port = "5432"
+
+    connection = create_postgres_connection(db_name, db_user, db_password, db_host, db_port)
+    select_query = "SELECT * FROM car"
     cursor = connection.cursor(cursor_factory=DictCursor)
     rows = execute_query(cursor, select_query)
 
