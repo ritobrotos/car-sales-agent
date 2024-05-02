@@ -10,7 +10,7 @@ from src.sales_agent.gemini_agent import send_message
 # sys.path.insert(0, parent_dir)
 # print("parent_dir: ", parent_dir)
 
-st.title("Car Sales Chatbot")
+st.title("Second Drive Sales Chatbot")
 
 # Initialize rag history
 if "messages" not in st.session_state:
@@ -33,5 +33,5 @@ if prompt := st.chat_input(""):
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         response = send_message(prompt)
-        message_placeholder.markdown(response.text)
+        message_placeholder.markdown(response)
         st.session_state.messages.append({"role": "assistant", "content": response})
