@@ -38,16 +38,12 @@ few_shot_nl_to_query_examples = [
         "output": "SELECT * FROM car"
     },
     {
-        "input": "I am looking for a ford ecosports with mileage less than 20k",
-        "output": "SELECT * FROM car WHERE make = 'Ford' AND model = 'EcoSport' AND mileage < 20000"
+        "input": "I am looking for a ford ecosports with mileage less than 80k",
+        "output": "SELECT * FROM car WHERE make = 'Ford' AND model = 'EcoSport' AND mileage < 80000"
     },
     {
-        "input": "I am looking for a ford ecosports with mileage less than 20k and after 2019",
-        "output": "SELECT * FROM car WHERE make = 'Ford' AND model = 'EcoSport' AND mileage < 20000 AND model_year > 2019"
-    },
-    {
-        "input": "Honda city fully automatic, model should be after 2021 within the range of 15K",
-        "output": "SELECT * FROM car WHERE make = 'Honda' AND model = 'City' AND transmission = 'Automatic' AND model_year > 2021 AND price < 15000"
+        "input": "I am looking for a ford ecosports with mileage less than 90k and after 2019",
+        "output": "SELECT * FROM car WHERE make = 'Ford' AND model = 'EcoSport' AND mileage < 90000 AND model_year > 2019"
     },
 ]
 
@@ -88,8 +84,7 @@ natural_language_to_sql_query_prompt = """You are a query translator, you take h
     Below is the `car` table schema:
     {car_table_schema}
     
-    Below are few examples of user messages and their corresponding SQL queries. \
-    You can use these examples as reference to convert the user message into a valid SQL query.
+    Below are few examples of user message and their corresponding SQL queries.
 """
 
 validate_composed_sql_query_prompt = """You are an SQL query validator. You take a SQL query as input and validate the \
