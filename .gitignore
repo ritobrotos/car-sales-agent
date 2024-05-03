@@ -2,3 +2,5 @@
 src/__pycache__
 src/sales_agent/__pycache__
 src/utilities/__pycache__
+src/sales_agent/deprecated
+src/sales_agent/logs
